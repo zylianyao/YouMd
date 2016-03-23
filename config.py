@@ -47,8 +47,8 @@ cache = False
 debug = True
 use_comment = False
 backend_md = False
-admin_pwd = 'admin'
-admin_user = 'admin'
+admin_pwd = 'Yan521020.'
+admin_user = 'sanchan'
 multi_user = []
 
 
