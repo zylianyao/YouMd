@@ -1,7 +1,8 @@
 # coding=utf-8
-import os, shutil, sys
+import os, shutil, sys, platform
 
-i18n = sys.prefix + os.sep + "Tools" + os.sep + "i18n" + os.sep + "msgfmt.py"
+# 目前只支持liunx和Windows
+osSystem = platform.system().lower()
 
 
 # 获取指定路径下所有指定后缀的文件
@@ -22,10 +23,15 @@ def GetFileFromThisRootDir(dir, ext=None):
 
 
 poFiles = GetFileFromThisRootDir("lang", "po")
+startIndex = len(r"lang\lang_")
+i18n = sys.prefix + os.sep + "Tools" + os.sep + "i18n" + os.sep + "msgfmt.py"
 for pofile in poFiles:
-    os.system(i18n + " " + pofile)
+    if osSystem == "linux":
+        exeStr = "msgfmt " + pofile + " -o " + pofile[startIndex:len(pofile) - 2] + "mo"
+        os.system(exeStr)
+    else:
+        os.system(i18n + " " + pofile)
 # 移动所有mo到对应语言的目录
 files = GetFileFromThisRootDir("lang", "mo")
-startIndex = len(r"lang\lang_")
 for file in files:
     shutil.move(file, "locale" + os.sep + file[startIndex:][:2] + os.sep + "LC_MESSAGES\lang.mo")
