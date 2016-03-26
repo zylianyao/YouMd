@@ -1,24 +1,35 @@
 <!-- config -->
 <div id="footer">
 	<div class="modal-footer">
-		<ul class="unstyled">
-		<li>
-			Blog of <a href="/">{{ _("webauthor") }}</a>.
-			Follow me on <a href="https://github.com/JoneXiong" target="_blank">Github</a>
-		</li>
-		<li>
-			UI Designed by <a href="http://twitter.github.com/bootstrap" target="_blank">Twitter
-				Bootstrap</a>.
-			Powered by <a href="https://github.com/JoneXiong/Mole" target="_blank">Mole</a>.
-			Inspare by  Editor.md and Dylanninin/blog
-		</li>
-		<li>
-			Copyright &copy <a href="/">{{ _("webname") }}</a> |
-			<a href="{{ config.about_url }}">{{ _("index_about") }}</a>
-		</li>
+        <ul class="unstyled">
+            <li>
+                Blog of <a href="/">{{ _("webauthor") }}</a>.
+                Follow me on <a href="https://github.com/JoneXiong" target="_blank">Github</a>
+            </li>
+            <li>
+                UI Designed by <a href="http://twitter.github.com/bootstrap" target="_blank">Twitter
+                Bootstrap</a>.
+                Powered by <a href="https://github.com/JoneXiong/Mole" target="_blank">Mole</a>.
+                Inspare by Editor.md and Dylanninin/blog
+            </li>
+            <li>
+                Copyright &copy <a href="/">{{ _("webname") }}</a> |
+                <a href="{{ config.about_url }}">{{ _("index_about") }}</a>
+            </li>
 		</ul>
 	</div>
 	%include misc/analytics.html config=config
-	<script src="{{ config.static_url }}/js/jquery.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+    <![endif]-->
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="{{ config.static_url }}/assets/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <script src="{{ config.static_url }}/assets/js/amazeui.min.js"></script>
+    <script src="{{ config.static_url }}/assets/js/app.js"></script>
     <script src="{{ config.static_url }}/js/bootstrap.js"></script>
+    <script src="{{ config.static_url }}/js/jquery.share.min.js"></script>
 </div>

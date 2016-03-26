@@ -2,9 +2,14 @@
 	<div class="error-title">
 		<h3 class="">{{ error.title }}</h3>
 	</div>
-	<div class="error-content alert alert-error">
-	    <div class="">message: {{ error.message }}</div>
-		<div class="">statusCode: {{ error.statusCode }}</div>
-		<h4>Return <a href="{{ config.home }}">Home</a>.</h4>
-	</div>
+    % if error.statusCode == "404":
+    <script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"
+            homePageUrl="http://coderknock.com:8081" homePageName="回到我的主页"></script>
+    % else:
+    <div class="error-content alert alert-error">
+        <div class="">message111: {{ error.message }}</div>
+        <div class="">statusCode: {{ error.statusCode }}</div>
+        <h4>Return <a href="{{ config.home }}">Home</a>.</h4>
+    </div>
+    % end
 </div>

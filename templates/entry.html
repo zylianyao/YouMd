@@ -10,6 +10,7 @@
 			<div class="row">
 				<div class="span9">
 					% include modules/entry.html entry=params.entry, config=config
+                    % include layout/expand.html config=config
 					<hr>
 					% include modules/info.html entry=params.entry, config=config
 					% include modules/category.html categories=params.entry.categories, config=config
