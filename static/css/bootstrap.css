@@ -824,6 +824,7 @@ ol ul {
 
 li {
   line-height: 20px;
+  list-style: none;
 }
 
 ul.unstyled,

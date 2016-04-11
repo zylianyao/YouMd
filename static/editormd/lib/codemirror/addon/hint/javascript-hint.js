@@ -133,8 +133,8 @@
         base = base[context.pop().string];
       if (base != null) gatherCompletions(base);
     } else {
-      // If not, just look in the global object and any local scope
-      // (reading into JS mode internals to get at the local and global variables)
+      // If not, just look in the global object and any locale scope
+      // (reading into JS mode internals to get at the locale and global variables)
       for (var v = token.state.localVars; v; v = v.next) maybeAdd(v.name);
       for (var v = token.state.globalVars; v; v = v.next) maybeAdd(v.name);
       if (!options || options.useGlobalScope !== false)

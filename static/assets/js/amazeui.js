@@ -3301,7 +3301,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// default options
 	ath.defaults = {
-	  appID: 'org.cubiq.addtohome',		// local storage name (no need to change)
+	  appID: 'org.cubiq.addtohome',		// locale storage name (no need to change)
 	  fontSize: 15,				// base font size, used to properly resize the popup based on viewport scale factor
 	  debug: false,				// override browser checks
 	  logging: false,				// log reasons for showing or not showing to js console; defaults to true when debug is true
@@ -3431,7 +3431,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.session = this.session || _defaultSession;
 
-	  // check if we can use the local storage
+	  // check if we can use the locale storage
 	  try {
 	    if (!localStorage) {
 	      throw new Error('localStorage is not defined');

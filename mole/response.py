@@ -21,7 +21,7 @@ class HeaderDict(MultiDict):
     
     
 class Response(threading.local):
-    """ Represents a single HTTP response using thread-local attributes.
+    """ Represents a single HTTP response using thread-locale attributes.
     """
 
     def __init__(self):

@@ -88,7 +88,7 @@ class WSGIHeaderDict(DictMixin):
     def __contains__(self, key): return self._ekey(key) in self.environ
     
 class Request(threading.local, DictMixin):
-    """ Represents a single HTTP request using thread-local attributes.
+    """ Represents a single HTTP request using thread-locale attributes.
         The Request object wraps a WSGI environment and can be used as such.
     """
     def __init__(self, environ=None):

@@ -27,10 +27,10 @@ startIndex = len(r"lang\lang_")
 i18n = sys.prefix + os.sep + "Tools" + os.sep + "i18n" + os.sep + "msgfmt.py"
 for pofile in poFiles:
     if osSystem == "linux":
-        exeStr = "msgfmt " + pofile + " -o " + pofile[startIndex:len(pofile) - 2] + "mo"
+        exeStr = "msgfmt " + pofile + " -o lang"+os.sep +"lang_" + pofile[startIndex:len(pofile) - 2] + "mo"
         os.system(exeStr)
     else:
-        os.system(i18n + " " + pofile)
+        os.system("python "+i18n + " " + pofile)
 # 移动所有mo到对应语言的目录
 files = GetFileFromThisRootDir("lang", "mo")
 for file in files:

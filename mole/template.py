@@ -80,7 +80,7 @@ class BaseTemplate(object):
         raise NotImplementedError
 
     def render(self, *args, **kwargs):
-        """ Render the template with the specified local variables and return
+        """ Render the template with the specified locale variables and return
         a single byte or unicode string. If it is a byte string, the encoding
         must match self.encoding. This method must be thread-safe!
         Local variables may be provided in dictionaries (*args)
@@ -326,7 +326,7 @@ class SimpleTemplate(BaseTemplate):
         return env
 
     def render(self, *args, **kwargs):
-        """ Render the template using keyword arguments as local variables. """
+        """ Render the template using keyword arguments as locale variables. """
         for dictarg in args: kwargs.update(dictarg)
         stdout = []
         self.execute(stdout, kwargs)

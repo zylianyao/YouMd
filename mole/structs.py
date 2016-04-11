@@ -41,7 +41,7 @@ class MultiDict(DictMixin):
             return key in self.dict
                 
 class DictProperty(object):
-    ''' Property that maps to a key in a local dict-like attribute. '''
+    ''' Property that maps to a key in a locale dict-like attribute. '''
     def __init__(self, attr, key=None, read_only=False):
         self.attr, self.key, self.read_only = attr, key, read_only
 

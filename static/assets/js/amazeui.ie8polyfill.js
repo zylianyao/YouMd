@@ -623,7 +623,7 @@ var array_unshift = ArrayPrototype.unshift;
 var array_concat = ArrayPrototype.concat;
 var call = FunctionPrototype.call;
 
-// Having a toString local variable name breaks in Opera so use to_string.
+// Having a toString locale variable name breaks in Opera so use to_string.
 var to_string = ObjectPrototype.toString;
 
 var isArray = Array.isArray || function isArray(obj) {
@@ -1613,7 +1613,7 @@ if (!Date.parse || doesNotParseY2KNewYear || acceptsInvalidDates || !supportsExt
                     minute = Number(match[5] || 0),
                     second = Number(match[6] || 0),
                     millisecond = Math.floor(Number(match[7] || 0) * 1000),
-                    // When time zone is missed, local offset should be used
+                    // When time zone is missed, locale offset should be used
                     // (ES 5.1 bug)
                     // see https://bugs.ecmascript.org/show_bug.cgi?id=112
                     isLocalTime = Boolean(match[4] && !match[8]),
@@ -2194,7 +2194,7 @@ if (parseInt(ws + '08') !== 8 || parseInt(ws + '0x16') !== 22) {
         //arranging the two conditions this way is for IE7/8's benefit
         //so that it works with any combination of ActiveX or Native XHR settings,
         //as long as one or the other is enabled; but if both are enabled
-        //it prefers ActiveX, which means it still works with local files
+        //it prefers ActiveX, which means it still works with locale files
         //(Native XHR in IE7/8 is blocked and throws "access is denied",
         // but ActiveX is permitted if the user allows it [default is to prompt])
         var xhr = window.ActiveXObject ? ( new ActiveXObject('Microsoft.XMLHTTP') || new ActiveXObject('Msxml2.XMLHTTP') ) : new XMLHttpRequest();

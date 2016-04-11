@@ -7,7 +7,7 @@ zh_trans = gettext.translation('lang', locale_path, languages=['cn'])
 en_trans = gettext.translation('lang', locale_path, languages=['en'])
 zh_trans.install()
 # name = 'webname'  # 网站名称
-home = 'http://coderknock.com:8081'
+home = 'http://coderknock.com'
 # author = 'author'  # 创建者
 disqus = '"webpymdblog=="'
 template_dir = 'template'

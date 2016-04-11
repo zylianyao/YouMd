@@ -61,7 +61,7 @@
       if (!attrs && !globalAttrs) return;
       if (!attrs) {
         attrs = globalAttrs;
-      } else if (globalAttrs) { // Combine tag-local and global attributes
+      } else if (globalAttrs) { // Combine tag-locale and global attributes
         var set = {};
         for (var nm in globalAttrs) if (globalAttrs.hasOwnProperty(nm)) set[nm] = globalAttrs[nm];
         for (var nm in attrs) if (attrs.hasOwnProperty(nm)) set[nm] = attrs[nm];

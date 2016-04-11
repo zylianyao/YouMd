@@ -2475,7 +2475,7 @@
     return view;
   }
 
-  // Get a {top, bottom, left, right} box (in line-local coordinates)
+  // Get a {top, bottom, left, right} box (in line-locale coordinates)
   // for a given character.
   function measureChar(cm, line, ch, bias) {
     return measureCharPrepared(cm, prepareMeasureForLine(cm, line), ch, bias);
@@ -2669,9 +2669,9 @@
   function pageScrollX() { return window.pageXOffset || (document.documentElement || document.body).scrollLeft; }
   function pageScrollY() { return window.pageYOffset || (document.documentElement || document.body).scrollTop; }
 
-  // Converts a {top, bottom, left, right} box from line-local
+  // Converts a {top, bottom, left, right} box from line-locale
   // coordinates into another coordinate system. Context may be one of
-  // "line", "div" (display.lineDiv), "local"/null (editor), "window",
+  // "line", "div" (display.lineDiv), "locale"/null (editor), "window",
   // or "page".
   function intoCoordSystem(cm, lineObj, rect, context) {
     if (lineObj.widgets) for (var i = 0; i < lineObj.widgets.length; ++i) if (lineObj.widgets[i].above) {
@@ -2694,7 +2694,7 @@
   }
 
   // Coverts a box from "div" coords to another coordinate system.
-  // Context may be "window", "page", "div", or "local"/null.
+  // Context may be "window", "page", "div", or "locale"/null.
   function fromCoordSystem(cm, coords, context) {
     if (context == "div") return coords;
     var left = coords.left, top = coords.top;
@@ -2774,7 +2774,7 @@
   }
 
   // Compute the character position closest to the given coordinates.
-  // Input must be lineSpace-local ("div" coordinate system).
+  // Input must be lineSpace-locale ("div" coordinate system).
   function coordsChar(cm, x, y) {
     var doc = cm.doc;
     y += cm.display.viewOffset;

@@ -350,7 +350,7 @@ CodeMirror.defineMode("perl",function(){
                 'link'                          :1,     // - create a hard link in the filesytem
                 listen                          :1,     // - register your socket as a server
                 local                           : 2,    // - create a temporary value for a global variable (dynamic scoping)
-                localtime                       :1,     // - convert UNIX time into record or string using local time
+                localtime                       :1,     // - convert UNIX time into record or string using locale time
                 lock                            :1,     // - get a thread lock on a variable, subroutine, or method
                 'log'                           :1,     // - retrieve the natural logarithm for a number
                 lstat                           :1,     // - stat a symbolic link
@@ -361,7 +361,7 @@ CodeMirror.defineMode("perl",function(){
                 msgget                          :1,     // - get SysV IPC message queue
                 msgrcv                          :1,     // - receive a SysV IPC message from a message queue
                 msgsnd                          :1,     // - send a SysV IPC message to a message queue
-                my                              : 2,    // - declare and assign a local variable (lexical scoping)
+                my                              : 2,    // - declare and assign a locale variable (lexical scoping)
                 'new'                           :1,     //
                 next                            :1,     // - iterate a block prematurely
                 no                              :1,     // - unimport some module symbols or semantics at compile time
