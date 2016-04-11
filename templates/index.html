@@ -12,8 +12,8 @@
 						% include modules/excerpt.html excerpt=entry
 					% end
 					</div>
+                    % include modules/pager.html pager=params.pager, config=config
                     % include layout/expand.html config=config
-					% include modules/pager.html pager=params.pager, config=config
 				</div>
 				<!--
 				<div class="span3">
