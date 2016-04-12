@@ -77,7 +77,13 @@ def About():
     if params.entry == None:
         return template('error', params=params, config=config)
     return template('entry', params=params, config=config)
-
+@route('/site.html')
+def About():
+    url = config.about_url
+    params = entryService.find_by_url(entryService.types.page, url)
+    if params.entry == None:
+        return template('error', params=params, config=config)
+    return template('entry', params=params, config=config)
 
 @route('/atom.xml')
 def Subscribe():

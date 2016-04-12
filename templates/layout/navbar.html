@@ -9,6 +9,17 @@
     			</a><a class="brand" href="/">{{ _("webname") }}</a>
     			<div class="nav-collapse collapse">
     				<ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false"><i class="icon-chevron-down icon-white    "></i> {{_("nav_category")}}</a>
+                            <ul class="dropdown-menu">
+                                % for tag in tags:
+                                    %if tag.rank==1:
+                                     <li class="rank-{{ tag.rank }}"><a href="{{ config.search_url }}?type=tag&value={{ tag.name }}&start={{ config.start }}&limit={{ config.limit }}">{{ tag.name }} </a></li>
+                                     % end
+				                 % end
+                            </ul>
+                        </li>
     					<li><a href="/"><i class="icon-home icon-white"></i> {{ _("index_home") }}</a></li>
     					<li><a href="{{ config.archive_url }}"><i class="icon-book icon-white"></i> {{ _("index_index") }}</a></li>
     					<li><a href="{{ config.about_url }}"><i class="icon-user icon-white"></i> {{_("index_about")}}</a></li>

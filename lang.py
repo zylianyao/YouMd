@@ -1,27 +1,8 @@
 # coding=utf-8
 import os, shutil, sys, platform
-
+from FileUtil import GetFileFromThisRootDir
 # 目前只支持liunx和Windows
 osSystem = platform.system().lower()
-
-
-# 获取指定路径下所有指定后缀的文件
-# dir 指定路径
-# ext 指定后缀，链表&不需要带点 或者不指定。例子：['xml', 'java']
-def GetFileFromThisRootDir(dir, ext=None):
-    allfiles = []
-    needExtFilter = (ext != None)
-    for root, dirs, files in os.walk(dir):
-        for filespath in files:
-            filepath = os.path.join(root, filespath)
-            extension = os.path.splitext(filepath)[1][1:]
-            if needExtFilter and extension in ext:
-                allfiles.append(filepath)
-            elif not needExtFilter:
-                allfiles.append(filepath)
-    return allfiles
-
-
 poFiles = GetFileFromThisRootDir("lang", "po")
 startIndex = len(r"lang\lang_")
 i18n = sys.prefix + os.sep + "Tools" + os.sep + "i18n" + os.sep + "msgfmt.py"
