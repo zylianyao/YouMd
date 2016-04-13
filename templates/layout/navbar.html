@@ -27,16 +27,11 @@
     					<li><a href="{{ config.raw_url }}"><i class="icon-th-list icon-white"></i> {{_("index_raw")}}</a></li>
     					% end
     					<li><a href="{{ config.subscribe_url }}"><i class="icon-plus icon-white"></i> {{_("index_subscribe")}}</a></li>
-    					<li><a href="/new" target="_BLANK"><i class="icon-edit icon-white"></i> {{_("index_editer")}}</a></li>
     				</ul>
     				% if config.cur_user():
     				<ul class="nav pull-right">
     					<li><a href="{{ config.private_url }}"> {{ config.cur_user() }}</a></li>
     					<li><a href="/auth/logout"><i class="icon-off icon-white"></i> {{ _("index_exit") }}</a></li>
-    				</ul>
-    				% else:
-    				<ul class="nav pull-right">
-    					<li><a href="/auth/login"> {{ _("index_login") }}</a></li>
     				</ul>
     				% end
                     <ul class="nav pull-right">
