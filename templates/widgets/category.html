@@ -4,7 +4,7 @@
 		<div class="widget-content">
 			<ul>
 				 % for c in categories:
-				     <li><a href="{{ config.search_url }}?type=category&value={{ c.name }}&start={{ config.start }}&limit={{ config.limit }}">{{ c.name }} ({{ c.count }})</a></li>
+				     <li><a href="{{ config.search_url }}/category/{{ c.name }}/{{ config.start }}/{{ config.limit }}">{{ c.name }} ({{ c.count }})</a></li>
 				 % end
 			</ul>
 		</div>

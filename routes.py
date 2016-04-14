@@ -92,12 +92,12 @@ def Subscribe():
     return template('atom', params=params, config=config)
 
 
-@route('/search')
-def Search():
-    type = request.GET.get('type', entryService.types.query)
-    value = request.GET.get('value', '')
-    limit = int(request.GET.get('limit', config.limit))
-    start = int(request.GET.get('start', config.start))
+@route('/search/:url#.*#')
+def Search(url):
+    print url.split("/")
+    type,value,startStr,limitStr = url.split("/")
+    limit = int(limitStr)
+    start = int(startStr)
 
     url = '%s/?type=%s&value=%s&start=%d&limit=%d' % (config.search_url, type, value, start, limit)
     params = entryService.search(type, url, value, start, limit)
