@@ -34,7 +34,7 @@ class EntryService:
         self._init_entries()
         
     def get_tag_url(self, tag):
-        url = '/search?type=tag&value=%s&start=1&limit=5'%urllib.quote(tag)
+        url = '/search/tag/%s/1/5'%urllib.quote(tag)
         return url
         
     def add_private(self, path):
